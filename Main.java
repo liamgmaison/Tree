@@ -42,7 +42,7 @@ public class Main
 		// is to simply confirm that the PersonSet object has been created. It
 		// is important to remember that the PersonSet object uses an ArrayList
 		// to store the Person objects that are created by the while loop.
-		PersonSet personSet = new PersonSet();
+		SortedTreeSet personSet = new SortedTreeSet();
 		
 		// C: Read in data from hr.txt
 		
@@ -146,7 +146,7 @@ public class Main
 	// A new method to write to file. It first opens a new file named filename
 	// and then it writes using the toString method. There is a try and catch
 	// loop in this if somehow the writer fails.
-	private static void writeToFile(String filename, PersonSet set)
+	private static void writeToFile(String filename, Object set)
 	{
 		try (BufferedWriter shakespeare = new BufferedWriter(new FileWriter(filename)))
 		{

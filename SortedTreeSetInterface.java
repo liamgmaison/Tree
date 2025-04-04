@@ -1,5 +1,5 @@
 
-public interface SortedTreeSetInterface //Binary Tree
+public interface SortedTreeSetInterface//Binary Tree
 {
 //	public Person getPerson();
 //
