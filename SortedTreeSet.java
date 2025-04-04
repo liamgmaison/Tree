@@ -28,10 +28,20 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 	public SortedTreeSet() {
 		root = null;
 	} // End of SortedTreeSet Constructor.
+
+	@Override
+	public void add(Person person) {
+		root = insertPerson(root, person);
+	} // End of add() method
+	
+	private TreeNode insertPerson(TreeNode node, Person person) {
+		return null;
+	} // End of insertPerson()
 	
 	@Override
 	public String toString() {
 		StringBuilder stringBuild = new StringBuilder();
+		return null;
 	}
 	
 } // End of SortedTreeSEt
