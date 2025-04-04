@@ -34,8 +34,32 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 		root = insertPerson(root, person);
 	} // End of add() method
 	
+	// Node is the current node we are dealing with and person is the uh 
+	// person object that we want to store in that node.
 	private TreeNode insertPerson(TreeNode node, Person person) {
-		return null;
+		if (node == null) {
+			// This creates the node with information imbedded.
+			return new TreeNode(person);
+		}
+		// node.person from TreeNode using getter method from Person returns
+		// the name of the current name in the tree right now that the person
+		// in question's name is being compared to and we store a value into
+		// compareNode. If person.getName() is alphabetically earlier than 
+		// node.person.getName(), compareNode will be negative. 
+		// If person.getName() is alphabetically later than 
+		// node.person.getName(), compareNode is positive. If they are equal
+		// than compareNode == 0. We will have it so negative values go left
+		// and positive values go right. Duplicates, when compareNode == 0, are
+		// eliminated in real time.
+		int compareNode = person.getName().compareToIgnoreCase(node.person.getName());
+		
+		// The comparative part of this program as explained above
+		if (compareNode < 0) {
+			node.left = insertPerson(node.left, person);
+		} else if (compareNode > 0) {
+			node.right = insertPerson(node.right, person);
+		}
+		return node;
 	} // End of insertPerson()
 	
 	@Override
