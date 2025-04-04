@@ -1,4 +1,25 @@
-import javax.swing.tree.*;
+/*
+Title: SortedTreeSet.java
+Name: William Maison-Bush
+Date: 04 April 2025
+Purpose: This class defines a self-sorting binary search tree that stores 
+         Person objects in alphabetical order by name, eliminates duplicates, 
+		 and provides a formatted string output of the tree’s contents using 
+		 in-order traversal.
+Sources: Java - How to Program - Late Objects 11th Edition Deitel et al
+https://www.w3schools.com/java/java_interface.asp
+https://www.w3schools.com/java/java_arraylist.asp
+https://www.w3schools.com/java/java_polymorphism.asp
+https://youtu.be/GhslBwrRsnw?si=WRK-p3-LHWTUA205
+https://youtu.be/2hkngtWLGvE?si=jtTT5PVTLpsXpzGk
+https://www.youtube.com/watch?v=H5JubkIy_p8
+https://www.youtube.com/watch?v=Gt2yBZAhsGM
+https://www.youtube.com/watch?v=YAdLFsTG70w
+https://www.youtube.com/watch?v=GzJoqJO1zdI
+https://www.youtube.com/watch?v=M6lYob8STMI
+https://www.youtube.com/watch?v=9oTV7fDEaCY
+2251 Example Files
+*/
 
 public class SortedTreeSet implements SortedTreeSetInterface {
 	
@@ -53,7 +74,8 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 		// than compareNode == 0. We will have it so negative values go left
 		// and positive values go right. Duplicates, when compareNode == 0, are
 		// eliminated in real time.
-		int compareNode = person.getName().compareToIgnoreCase(node.person.getName());
+		int compareNode = 
+			person.getName().compareToIgnoreCase(node.person.getName());
 		
 		// The comparative part of this program as explained above
 		if (compareNode < 0) {
@@ -70,8 +92,8 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 	@Override
 	public String toString() {
 		StringBuilder stringBuild = new StringBuilder();
-		stringBuild.append(String.format("%-8s %12s %20s%n", "Name", "Height (in)", 
-			"Weight (lbs)"));
+		stringBuild.append(String.format("%-8s %12s %20s%n", "Name", 
+			"Height (in)", "Weight (lbs)"));
 		buildString(root, stringBuild);
 		stringBuild.append("\nThank you!\n");
 		return stringBuild.toString();

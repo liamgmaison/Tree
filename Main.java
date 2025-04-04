@@ -1,20 +1,23 @@
 /*
 Title: Main.java
 Name: William Maison-Bush
-Date: 10 March 2025
-Purpose: The Main.java file processes data from hr.txt, using PersonList and 
-		 PersonSet to manage Person objects while handling duplicates.
+Date: 04 April 2025
+Purpose: This program reads in data from a text file, stores it in custom 
+         person sets including a self-sorting binary tree, and outputs 
+		 formatted, duplicate-free results to a file and the console.
 Sources: Java - How to Program - Late Objects 11th Edition Deitel et al
 https://www.w3schools.com/java/java_interface.asp
 https://www.w3schools.com/java/java_arraylist.asp
 https://www.w3schools.com/java/java_polymorphism.asp
 https://youtu.be/GhslBwrRsnw?si=WRK-p3-LHWTUA205
 https://youtu.be/2hkngtWLGvE?si=jtTT5PVTLpsXpzGk
+https://www.youtube.com/watch?v=H5JubkIy_p8
+https://www.youtube.com/watch?v=Gt2yBZAhsGM
+https://www.youtube.com/watch?v=YAdLFsTG70w
+https://www.youtube.com/watch?v=GzJoqJO1zdI
+https://www.youtube.com/watch?v=M6lYob8STMI
+https://www.youtube.com/watch?v=9oTV7fDEaCY
 2251 Example Files
-ChatGPT: "What am I doing wrong because this code is not getting rid of
-		  duplicates?" Response: Fix: Use == 0 for Exact Comparison
-https://www.geeksforgeeks.org/overriding-equals-method-in-java/
-}"
 */
 
 // Imports
@@ -149,7 +152,8 @@ public class Main
 	// loop in this if somehow the writer fails.
 	private static void writeToFile(String filename, Object set)
 	{
-		try (BufferedWriter shakespeare = new BufferedWriter(new FileWriter(filename)))
+		try (BufferedWriter shakespeare = 
+			new BufferedWriter(new FileWriter(filename)))
 		{
 			shakespeare.write(set.toString());
 		} catch (IOException e)
@@ -162,9 +166,13 @@ public class Main
 
 /*
 Overall Feedback
-Code is mostly great, but I would like the output formatted the same as hr.txt, like this:
+Code is mostly great, but I would like the output formatted the same as hr.txt, 
+like this:
 
 return String.format("%-8s %12.0f %20.0f\n", name, height, weight);
 
-Also, I should be able to load in different files from the command prompt with something like java Main hr.txt, which means that the input file should not be hard coded like this: File file = new File("hr.txt"); but should use the input arguments: File file = new File(args[0]);
+Also, I should be able to load in different files from the command prompt with 
+something like java Main hr.txt, which means that the input file should not be 
+hard coded like this: File file = new File("hr.txt"); but should use the input 
+arguments: File file = new File(args[0]);
 */
