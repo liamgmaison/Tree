@@ -1,3 +1,5 @@
+import javax.swing.tree.*;
+
 public class SortedTreeSet implements SortedTreeSetInterface {
 	
 	// I am creating a node structure for a tree. This node has a person
@@ -62,10 +64,25 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 		return node;
 	} // End of insertPerson()
 	
+	// This is the toString() method that returns a print of the storted string
+	// stored in the entire tree. It uses string builder and requires the help
+	// of buildString to walk along the tree and create a string to print.
 	@Override
 	public String toString() {
 		StringBuilder stringBuild = new StringBuilder();
-		return null;
+		buildString(root, stringBuild);
+		return stringBuild.toString();
 	}
+	
+	// This is the helper method buildString that works as long as the node
+	// is not null and slowly walks along the tree and assorts the nodes.
+	// String builder was recommended over concatenation.
+	private void buildString(TreeNode node, StringBuilder stringBuild) {
+		if (node != null) {
+			buildString(node.left, stringBuild);
+			stringBuild.append(node.person.toString()).append("\n");
+			buildString(node.right, stringBuild);
+		} // End of if statement
+	} // End of buildString
 	
 } // End of SortedTreeSEt
