@@ -51,7 +51,8 @@ public class Main
 		
 		// Created two sets. orderedSet will store alphabetically sorted
 		// information.
-		PersonOrderedSet orderedSet = new PersonOrderedSet();
+//		PersonOrderedSet orderedSet = new PersonOrderedSet();
+		SortedTreeSet orderedSet = new SortedTreeSet();
 		// imperialSet will store height and weight in inches and pounds.
 		PersonImperialSet imperialSet = new PersonImperialSet();
 		
