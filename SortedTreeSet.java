@@ -18,6 +18,15 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 			right = null;
 		} // End of constructor
 	} // End of TreeNode class
-		
+	
+		// We start with the root of the tree. All these tree metaphors are 
+		// really . . . interesting. Anyway, we create a private TreeNode
+		// called root.
+		private TreeNode root;
+		// onstructor for the SortedTreeSet class that initializes the root
+		// to be null, empty, void, like space ever eternal. 
+		public SortedTreeSet() {
+			root = null;
+		} // End of SortedTreeSet Constructor.
 	
 } // End of SortedTreeSEt
