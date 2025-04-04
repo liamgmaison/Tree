@@ -70,7 +70,10 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 	@Override
 	public String toString() {
 		StringBuilder stringBuild = new StringBuilder();
+		stringBuild.append(String.format("%-8s %12s %20s%n", "Name", "Height (in)", 
+			"Weight (lbs)"));
 		buildString(root, stringBuild);
+		stringBuild.append("\nThank you!\n");
 		return stringBuild.toString();
 	}
 	
@@ -80,7 +83,7 @@ public class SortedTreeSet implements SortedTreeSetInterface {
 	private void buildString(TreeNode node, StringBuilder stringBuild) {
 		if (node != null) {
 			buildString(node.left, stringBuild);
-			stringBuild.append(node.person.toString()).append("\n");
+			stringBuild.append(node.person.toString()).append("");
 			buildString(node.right, stringBuild);
 		} // End of if statement
 	} // End of buildString

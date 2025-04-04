@@ -129,18 +129,19 @@ public class Main
 		// directory where main is located. They are modified and formatted. 
 		// They also have no duplicates.
 		writeToFile("hr_ordered_set_output.txt", orderedSet);
-		writeToFile("hr_imperial_set_output.txt", imperialSet);
+//		writeToFile("hr_imperial_set_output.txt", imperialSet);
 		
 		// Informs the user to check their directory for the file outputs.
-		System.out.println("\nTwo files have been made. Check directory.");
+//		System.out.println("\nTwo files have been made. Check directory.");
+		System.out.println("\nOne file have been made. Check directory.");
 		
 		// Print both sets to the console for the user to see a preview of what
 		// they ordered.
-		System.out.println("\nOrdered Set:");
+		System.out.println("\nOrdered Tree Set:");
 		System.out.println(orderedSet);
 		
-		System.out.println("\nImperial Set (USA! USA!):");
-		System.out.println(imperialSet);
+//		System.out.println("\nImperial Set (USA! USA!):");
+//		System.out.println(imperialSet);
 	} // End of main...whew!
 	
 	// A new method to write to file. It first opens a new file named filename
